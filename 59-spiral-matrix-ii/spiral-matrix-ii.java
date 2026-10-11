@@ -9,14 +9,13 @@ class Solution {
         int num=1;
 
         while(startRow <= endRow && startCol <= endCol){
-            
-            //Top
+            //top 
             for(int j=startCol;j<=endCol;j++){
-                matrix[startRow][j]=num++;
+                 matrix[startRow][j]=num++;
             }
             startRow++;
 
-            //Right
+            //right
             for(int i=startRow;i<=endRow;i++){
                 matrix[i][endCol]=num++;
             }
@@ -24,12 +23,13 @@ class Solution {
 
             //bottom
             for(int j=endCol;j>=startCol;j--){
-                if(startRow>endRow){
-                    break;
-                }
-                matrix[endRow][j]=num++;
+               if(startRow>endRow){
+                   break;
+               }
+               matrix[endRow][j]=num++;
             }
             endRow--;
+
             //left
             for(int i=endRow;i>=startRow;i--){
                 if(startCol>endCol){
@@ -38,8 +38,9 @@ class Solution {
                 matrix[i][startCol]=num++;
             }
             startCol++;
+       
         }
-        return matrix;
-
+        return matrix; //matrix
+        
     }
 }
